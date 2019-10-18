@@ -9,7 +9,7 @@ export interface IAssetData {
     asset_name: string;
     asset_value: number;
   }
-
+  
 export interface IBM{
     assets:IAssetData[]
 }

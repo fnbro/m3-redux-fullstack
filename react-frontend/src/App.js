@@ -31,7 +31,7 @@ export default class App extends Component {
     //The axios library will be used to ask the express server to deliver the data of the assets that are already in the database 
     //by sending a get request to the express rest api
 
-    axios.get('http://localhost:8080/assets/').then(response => {
+    axios.get('http://localhost:8080/assets/read').then(response => {
 
       //this code will be executed as soon as the browser receives the response from the express server
       //in order to see how the response.data was created open the file /express-mongo-backend/server.js
@@ -153,10 +153,7 @@ export default class App extends Component {
 
   //the next method is just a helper to save a new asset in the database
 
-  saveAssetToDatabase(asset) {
-    axios.post('http://localhost:8080/assets/add', asset)
-      .then(res => console.log(res.data));
-  }
+ 
 
 }
 

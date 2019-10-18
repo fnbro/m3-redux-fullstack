@@ -28,6 +28,12 @@ reducerFunctions[ActionType.add_assets_from_server] = function (newState: IState
   newState.BM.assets = action.assets;
   return newState;
 }
+export interface IAssetData {
+  _id: string;
+  asset_name: string;
+  asset_value: number;
+
+}
 export default class App extends React.PureComponent<IProps> {
 
   componentDidMount() {
@@ -45,6 +51,14 @@ export default class App extends React.PureComponent<IProps> {
       window.CS.clientAction(responseAction);
     }).catch(function (error) { console.log(error); })
   }
+
+  saveAssetToDatabase(asset:any) {
+    axios.post('http://localhost:8080/assets/add', asset)
+      .then(res => console.log(res.data));
+  }
+
+
+
 
   render() {
     window.CS.log("App --> render()")

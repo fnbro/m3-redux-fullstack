@@ -7,6 +7,7 @@ let Asset = require('../models/asset.model');
 //now we define the rest endpoints for the CRUD methods and implement the CRUD methods
 //R: read all assets
 
+
 assetRoutes.route('/read').get(function (req, res) {
     console.log("got a request");
     Asset.find(function (err, assets) {

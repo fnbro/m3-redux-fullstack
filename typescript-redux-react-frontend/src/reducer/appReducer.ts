@@ -11,8 +11,8 @@ export const reducer = (state = initial, action: IAction) => {
     let newState:IState = JSON.parse(JSON.stringify(state)) as IState;
     newState.UI.counter = state.UI.counter + 1;
     const reducerFunction = reducerFunctions[action.type];
-	if (reducerFunction !== undefined) {
-		reducerFunction(newState,action);
+if (reducerFunction !== undefined) {
+reducerFunction(newState,action);
         return newState;
     }
     switch (action.type) {
@@ -23,4 +23,3 @@ export const reducer = (state = initial, action: IAction) => {
             return newState;
     }
 }
-
